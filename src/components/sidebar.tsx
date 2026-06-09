@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const NAV = [
   {
-    href: "/app/dashboard",
+    href: "/dashboard",
     label: "Dashboard",
     icon: (
       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,7 +16,7 @@ const NAV = [
     ),
   },
   {
-    href: "/app/analyser",
+    href: "/analyser",
     label: "Plan Analyser",
     icon: (
       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,7 +26,7 @@ const NAV = [
     ),
   },
   {
-    href: "/app/estimates",
+    href: "/estimates",
     label: "Estimates",
     icon: (
       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@ const NAV = [
     ),
   },
   {
-    href: "/app/rates",
+    href: "/rates",
     label: "Rate Reference",
     icon: (
       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -99,9 +99,9 @@ export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
               <p className="text-[10px] uppercase tracking-widest text-zinc-600 font-medium">Admin</p>
             </div>
             <Link
-              href="/app/admin"
+              href="/admin"
               className={`flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm transition-colors ${
-                pathname === "/app/admin"
+                pathname === "/admin"
                   ? "bg-blue-600/15 text-blue-400"
                   : "text-zinc-400 hover:text-white hover:bg-[#1a1a1a]"
               }`}

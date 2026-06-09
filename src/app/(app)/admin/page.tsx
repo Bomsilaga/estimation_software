@@ -13,7 +13,7 @@ export default async function AdminPage() {
   if (!user) redirect("/login");
 
   const isAdmin = user.email === process.env.ADMIN_EMAIL || user.app_metadata?.role === "admin";
-  if (!isAdmin) redirect("/app/dashboard");
+  if (!isAdmin) redirect("/dashboard");
 
   const [{ data: requests }, { data: keys }] = await Promise.all([
     supabase

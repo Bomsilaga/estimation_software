@@ -49,7 +49,7 @@ export default async function DashboardPage() {
       {/* Quick actions */}
       <div className="grid grid-cols-2 gap-4 mb-8">
         <Link
-          href="/app/analyser"
+          href="/analyser"
           className="bg-blue-600/10 border border-blue-600/20 hover:bg-blue-600/15 rounded-xl p-5 transition-colors group"
         >
           <div className="flex items-start gap-3">
@@ -67,7 +67,7 @@ export default async function DashboardPage() {
         </Link>
 
         <Link
-          href="/app/estimates"
+          href="/estimates"
           className="bg-[#111] border border-[#2a2a2a] hover:bg-[#151515] rounded-xl p-5 transition-colors"
         >
           <div className="flex items-start gap-3">
@@ -90,7 +90,7 @@ export default async function DashboardPage() {
         <div className="bg-[#111] border border-[#2a2a2a] rounded-xl overflow-hidden">
           <div className="px-5 py-4 border-b border-[#2a2a2a] flex items-center justify-between">
             <h2 className="text-sm font-medium text-white">Recent estimates</h2>
-            <Link href="/app/estimates" className="text-xs text-blue-400 hover:text-blue-300">
+            <Link href="/estimates" className="text-xs text-blue-400 hover:text-blue-300">
               View all →
             </Link>
           </div>
@@ -109,7 +109,7 @@ export default async function DashboardPage() {
               {estimates.map((e) => (
                 <tr key={e.id}>
                   <td>
-                    <Link href={`/app/estimates/${e.id}`} className="text-blue-400 hover:text-blue-300">
+                    <Link href={`/estimates/${e.id}`} className="text-blue-400 hover:text-blue-300">
                       {e.name}
                     </Link>
                   </td>
@@ -141,7 +141,7 @@ export default async function DashboardPage() {
         <div className="bg-[#111] border border-dashed border-[#2a2a2a] rounded-xl p-12 text-center">
           <p className="text-zinc-400 text-sm mb-4">No estimates yet — start by analysing a floor plan.</p>
           <Link
-            href="/app/analyser"
+            href="/analyser"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
           >
             Start plan analysis →

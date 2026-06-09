@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
   const { error: inviteError } = await adminClient.auth.admin.inviteUserByEmail(email, {
     data: { name },
-    redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/app/dashboard`,
+    redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard`,
   });
 
   if (inviteError) {

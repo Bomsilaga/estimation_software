@@ -27,7 +27,7 @@ export default async function EstimatesPage() {
           </p>
         </div>
         <Link
-          href="/app/analyser"
+          href="/analyser"
           className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,7 +56,7 @@ export default async function EstimatesPage() {
               {estimates.map((e) => (
                 <tr key={e.id}>
                   <td>
-                    <Link href={`/app/estimates/${e.id}`} className="text-blue-400 hover:text-blue-300 font-medium">
+                    <Link href={`/estimates/${e.id}`} className="text-blue-400 hover:text-blue-300 font-medium">
                       {e.name}
                     </Link>
                   </td>
@@ -99,7 +99,7 @@ export default async function EstimatesPage() {
         <div className="bg-[#111] border border-dashed border-[#2a2a2a] rounded-xl p-16 text-center">
           <p className="text-zinc-400 text-sm mb-4">No estimates yet.</p>
           <Link
-            href="/app/analyser"
+            href="/analyser"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
           >
             Start with a plan analysis →

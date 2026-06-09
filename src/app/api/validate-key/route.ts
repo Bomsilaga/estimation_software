@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     type: "magiclink",
     email: cleanEmail,
     options: {
-      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/app/dashboard`,
+      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard`,
     },
   });
 
