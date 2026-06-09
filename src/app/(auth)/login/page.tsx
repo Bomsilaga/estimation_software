@@ -125,7 +125,6 @@ export default function LoginPage() {
                 <label className="block text-sm text-zinc-400 mb-1.5">Access key</label>
                 <input
                   type="text"
-                  required
                   value={key}
                   onChange={(e) => setKey(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ""))}
                   placeholder="AE3KM27P"
