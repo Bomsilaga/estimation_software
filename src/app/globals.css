@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface-raised: #1a1a1a;
+  --border: #2a2a2a;
+  --border-subtle: #1f1f1f;
+  --text: #ededed;
+  --text-muted: #737373;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Tables */
+.data-table {
+  @apply w-full border-collapse;
+}
+.data-table th {
+  @apply text-left text-xs font-medium text-zinc-500 uppercase tracking-wider px-3 py-2 border-b border-[#2a2a2a];
+}
+.data-table td {
+  @apply px-3 py-2.5 border-b border-[#1f1f1f] text-sm;
+}
+.data-table tr:last-child td {
+  @apply border-b-0;
+}
+.data-table tbody tr:hover td {
+  @apply bg-[#151515];
+}
+
+/* Input base */
+.input-base {
+  @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-md px-3 py-2 text-sm text-white placeholder-zinc-500
+    focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors;
+}
+
+/* Confidence badge colours */
+.conf-high   { @apply bg-emerald-900/30 text-emerald-400 border-emerald-800/50; }
+.conf-medium { @apply bg-amber-900/30   text-amber-400   border-amber-800/50;   }
+.conf-low    { @apply bg-red-900/30     text-red-400     border-red-800/50;     }
