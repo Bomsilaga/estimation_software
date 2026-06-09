@@ -47,7 +47,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Quick actions */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-3 gap-4 mb-8">
         <Link
           href="/analyser"
           className="bg-blue-600/10 border border-blue-600/20 hover:bg-blue-600/15 rounded-xl p-5 transition-colors group"
@@ -62,6 +62,24 @@ export default async function DashboardPage() {
             <div>
               <p className="text-white font-medium text-sm mb-1">New Plan Analysis</p>
               <p className="text-zinc-500 text-xs">Upload a floor plan — AI extracts quantities, you cross-check, estimate auto-generates.</p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          href="/manual"
+          className="bg-[#111] border border-[#2a2a2a] hover:bg-[#151515] rounded-xl p-5 transition-colors"
+        >
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 bg-zinc-800 rounded-lg flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-white font-medium text-sm mb-1">Manual Estimate</p>
+              <p className="text-zinc-500 text-xs">Enter project type, GFA, and spec level — get an AIQS elemental cost plan instantly.</p>
             </div>
           </div>
         </Link>
@@ -139,13 +157,21 @@ export default async function DashboardPage() {
 
       {(!estimates || estimates.length === 0) && (
         <div className="bg-[#111] border border-dashed border-[#2a2a2a] rounded-xl p-12 text-center">
-          <p className="text-zinc-400 text-sm mb-4">No estimates yet — start by analysing a floor plan.</p>
-          <Link
-            href="/analyser"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-          >
-            Start plan analysis →
-          </Link>
+          <p className="text-zinc-400 text-sm mb-4">No estimates yet — start with a plan analysis or manual estimate.</p>
+          <div className="flex items-center justify-center gap-3">
+            <Link
+              href="/analyser"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              Plan analysis →
+            </Link>
+            <Link
+              href="/manual"
+              className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#222] border border-[#2a2a2a] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              Manual estimate →
+            </Link>
+          </div>
         </div>
       )}
     </div>
