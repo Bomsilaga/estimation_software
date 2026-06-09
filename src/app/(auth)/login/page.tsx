@@ -111,6 +111,17 @@ export default function LoginPage() {
           ) : (
             <form onSubmit={handleKeyLogin} className="space-y-4">
               <div>
+                <label className="block text-sm text-zinc-400 mb-1.5">Your email</label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com.au"
+                  className="input-base w-full"
+                />
+              </div>
+              <div>
                 <label className="block text-sm text-zinc-400 mb-1.5">Access key</label>
                 <input
                   type="text"
@@ -120,17 +131,6 @@ export default function LoginPage() {
                   placeholder="AE3KM27P"
                   maxLength={8}
                   className="input-base w-full font-mono tracking-widest uppercase"
-                />
-              </div>
-              <div>
-                <label className="block text-sm text-zinc-400 mb-1.5">Your email</label>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com.au"
-                  className="input-base w-full"
                 />
               </div>
               {error && (
