@@ -144,7 +144,7 @@ export default function PlanAnalyserPage() {
     reviewFields.forEach((f) => {
       if (f.override !== undefined && f.accepted) {
         const val = typeof f.value === "number" ? Number(f.override) : f.override;
-        (finalData as Record<string, unknown>)[f.key as string] = val;
+        (finalData as unknown as Record<string, unknown>)[f.key as string] = val;
       }
     });
 
