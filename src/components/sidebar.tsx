@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 
 const NAV = [
@@ -51,9 +50,10 @@ const NAV = [
 export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
   const pathname = usePathname();
   const router = useRouter();
-  const supabase = createClient();
 
   async function signOut() {
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
     await supabase.auth.signOut();
     router.push("/login");
   }

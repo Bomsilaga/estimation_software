@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -10,12 +9,14 @@ export default function LoginPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
-  const supabase = createClient();
-
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    // Import client lazily — avoids SSR pre-render crash when env vars absent
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
 
     const { error } = await supabase.auth.signInWithOtp({
       email,
