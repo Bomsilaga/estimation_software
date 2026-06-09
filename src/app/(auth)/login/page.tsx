@@ -34,7 +34,22 @@ export default function LoginPage() {
       return;
     }
 
-    window.location.href = data.url;
+    // Verify OTP directly on the client — no redirect to Supabase needed
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
+    const { error: otpError } = await supabase.auth.verifyOtp({
+      type: "email",
+      token: data.otp,
+      email: data.email,
+    });
+
+    if (otpError) {
+      setError("Sign-in failed. Please try again.");
+      setLoading(false);
+      return;
+    }
+
+    window.location.href = "/app/dashboard";
   }
 
   async function handleAdminLogin(e: React.FormEvent) {

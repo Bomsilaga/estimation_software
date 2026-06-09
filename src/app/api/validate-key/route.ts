@@ -67,5 +67,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Failed to generate sign-in link" }, { status: 500 });
   }
 
-  return NextResponse.json({ url: linkData.properties.action_link });
+  return NextResponse.json({
+    otp: linkData.properties.email_otp,
+    email: cleanEmail,
+  });
 }
